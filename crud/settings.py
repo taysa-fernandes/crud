@@ -50,9 +50,7 @@ INSTALLED_APPS = [
     
     'core',
     'rest_framework',
-    'rest_framework.authtoken',
-    'rest_framework_docs',
-    'rest_framework_swagger',
+
 
 
 ]
