@@ -5,3 +5,5 @@ class PessoaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pessoa
         fields = '__all__'
+    def create(self, validated_data):
+        return Pessoa.objects.create(**validated_data)
