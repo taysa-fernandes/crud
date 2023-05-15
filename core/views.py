@@ -10,9 +10,10 @@ from .filters import MyModelFilter
 class PessoaViewSet(viewsets.ModelViewSet):
     queryset = Pessoa.objects.all()
     serializer_class = PessoaSerializer
+    filter_backends = [DjangoFilterBackend]
+    search_fields = ['nome', 'email','telefone','idade','created_at']
 
 class MyModelList(generics.ListCreateAPIView):
     queryset = MyModel.objects.all()
     serializer_class = MyModelSerializer
-    filter_backends = [DjangoFilterBackend]
     filterset_class = MyModelFilter
