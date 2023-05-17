@@ -8,7 +8,7 @@ class PessoaSerializer(serializers.ModelSerializer):
     #Classe que configura o serializador
     class Meta:
         model = Pessoa #especifica que o modelo Pessoa que será serializado
-        fields = '__all__' #indica que todos os campos será serializado
+        fields = ['id', 'nome', 'idade', 'email', 'telefone', 'parceiro'] #indica  os campos que será serializado
     #Método que cria a nova instância de Pessoa
     def create(self, validated_data):
         return Pessoa.objects.create(**validated_data)

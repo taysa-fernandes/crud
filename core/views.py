@@ -8,13 +8,13 @@ from rest_framework import filters
 
 from .models import Pessoa,Filtro
 from .serializers import PessoaSerializer,FiltroSerializer
-from .filters import FiltroModelFilter
+from .filters import FiltroModelFilter,PessoaModelFilter
 
 #Classe de visualização para manipular operações CRUD no modelo Pessoa
 class PessoaViewSet(viewsets.ModelViewSet):
     queryset = Pessoa.objects.all()
     serializer_class = PessoaSerializer
-    filterset_class = FiltroModelFilter
+    filterset_class = PessoaModelFilter
     filter_backends = [filters.SearchFilter]
     search_fields = ['nome', 'idade', 'email', 'telefone','id']
 
