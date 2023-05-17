@@ -16,7 +16,7 @@ class PessoaViewSet(viewsets.ModelViewSet):
     serializer_class = PessoaSerializer
     filterset_class = FiltroModelFilter
     filter_backends = [filters.SearchFilter]
-    search_fields = ['nome', 'idade', 'email', 'telefone', 'filtro']
+    search_fields = ['nome', 'idade', 'email', 'telefone','id']
 
 #Classe de visualização para listar e criar instâncias do modelo Filtro
 class FiltroList(generics.ListCreateAPIView):

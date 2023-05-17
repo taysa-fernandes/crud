@@ -24,9 +24,10 @@ class PessoaModelFilter(django_filters.FilterSet):
     email = django_filters.CharFilter(lookup_expr='icontains')
     telefone = django_filters.NumberFilter()
     filtro = django_filters.ModelChoiceFilter(queryset=Filtro)
+    id = django_filters.NumberFilter(field_name='id')
 
     
     #classe que define os metadados do conjunto de filtros
     class Meta:
         model = Pessoa # Define o modelo alvo dos filtros
-        fields = ['nome','idade','email','telefone','filtro'] # Define os campos que serão utilizados como filtros
+        fields = ['nome','idade','email','telefone','filtro','id'] # Define os campos que serão utilizados como filtros

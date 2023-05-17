@@ -19,7 +19,7 @@ class Pessoa(models.Model):
     idade = models.IntegerField()
     email = models.EmailField()
     telefone = models.CharField(max_length=20)
-    filtro = models.ForeignKey(Filtro,on_delete=models.CASCADE,default=1)
+    parceiro = models.ForeignKey(Filtro,on_delete=models.CASCADE,default=1,to_field='id')
     #método que retorna uma representação legível para o objeto Pessoa
     def __str__(self):
         return self.nome
