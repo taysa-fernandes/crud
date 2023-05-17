@@ -6,7 +6,6 @@ from rest_framework import generics
 from rest_framework import viewsets
 from rest_framework import filters
 
-
 from .models import Pessoa,Filtro
 from .serializers import PessoaSerializer,FiltroSerializer
 from .filters import FiltroModelFilter
