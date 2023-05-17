@@ -18,4 +18,4 @@ class FiltroSerializer(serializers.ModelSerializer):
     #Classe que configura o serializador
     class Meta:
         model = Filtro #especifica que o modelo Filtro que será serializado
-        fields = ['id', 'nome', 'idade', 'email', 'telefone','filtro'] #indica que os campos id,nome,idade,email e telefone será serializado
+        fields = ['id', 'nome', 'idade', 'email', 'telefone'] #indica que os campos id,nome,idade,email e telefone será serializado

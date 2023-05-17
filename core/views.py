@@ -5,7 +5,7 @@
 from rest_framework import generics
 from rest_framework import viewsets
 from rest_framework import filters
-
+from django_filters import rest_framework as rf
 from .models import Pessoa,Filtro
 from .serializers import PessoaSerializer,FiltroSerializer
 from .filters import FiltroModelFilter,PessoaModelFilter
@@ -15,8 +15,8 @@ class PessoaViewSet(viewsets.ModelViewSet):
     queryset = Pessoa.objects.all()
     serializer_class = PessoaSerializer
     filterset_class = PessoaModelFilter
-    filter_backends = [filters.SearchFilter]
-    search_fields = ['nome', 'idade', 'email', 'telefone','id']
+    filter_backends = [filters.SearchFilter,rf.DjangoFilterBackend]
+    search_fields = ['nome', 'idade', 'email', 'telefone']
 
 #Classe de visualização para listar e criar instâncias do modelo Filtro
 class FiltroList(generics.ListCreateAPIView):
