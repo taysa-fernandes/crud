@@ -11,7 +11,7 @@ router = DefaultRouter()
 # Registra a visualização PessoaViewSet com a rota 'pessoa'
 router.register(r'pessoa', PessoaViewSet, basename='pessoa')
 
-# Define a lista de URLs  e concatena as rotas automaticas do default router
+# Define a lista de URLs  e concatena as rotas automaticas do default router e adiciona as urls da documentação automática
 urlpatterns = [
    # YOUR PATTERNS
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
